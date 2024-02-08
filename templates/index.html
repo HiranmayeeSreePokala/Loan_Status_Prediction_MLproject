@@ -3,73 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loan Prediction Form</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Loan Status Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1 align="center">Loan Status Prediction</h1>
-    <form action="/predict_loan" method="post">
-        <label for="Gender">Gender:</label>
-        <select id="Gender" name="Gender" required>
-            <option value="select">Select</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-        </select>
+    <div class="container">
+        <h2>Loan Status Prediction</h2>
+        <form id="loanForm">
+            <label for="loanAmount">Loan Amount ($):</label>
+            <input type="number" id="loanAmount" name="loanAmount" required>
 
-        <label for="Married">Married:</label>
-        <select id="Married" name="Married" required>
-            <option value="select">Select</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
+            <label for="interestRate">Interest Rate (%):</label>
+            <input type="number" id="interestRate" name="interestRate" required>
 
-        <label for="Dependents">Dependents:</label>
-        <input type="text" id="Dependents" name="Dependents" required>
+            <label for="loanTerm">Loan Term (years):</label>
+            <input type="number" id="loanTerm" name="loanTerm" required>
 
-        <label for="Education">Education:</label>
-        <select id="Education" name="Education" required>
-            <option value="select">Select</option>
-            <option value="Graduate">Graduate</option>
-            <option value="Not Graduate">Not Graduate</option>
-        </select>
+            <label for="employmentStatus">Employment Status:</label>
+            <select id="employmentStatus" name="employmentStatus" required>
+                <option value="employed">Employed</option>
+                <option value="unemployed">Unemployed</option>
+            </select>
 
-        <label for="Self_Employed">Self Employed:</label>
-        <select id="Self_Employed" name="Self_Employed" required>
-            <option value="select">Select</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
+            <label for="creditScore">Credit Score:</label>
+            <input type="number" id="creditScore" name="creditScore" required>
 
-        <label for="ApplicantIncome">Applicant Income:</label>
-        <input type="text" id="ApplicantIncome" name="ApplicantIncome" required>
+            <label for="debtToIncomeRatio">Debt-to-Income Ratio:</label>
+            <input type="number" id="debtToIncomeRatio" name="debtToIncomeRatio" step="0.01" required>
 
-        <label for="CoapplicantIncome">Coapplicant Income:</label>
-        <input type="text" id="CoapplicantIncome" name="CoapplicantIncome" required>
+            <label for="purposeOfLoan">Purpose of Loan:</label>
+            <select id="purposeOfLoan" name="purposeOfLoan" required>
+                <option value="home_purchase">Home Purchase</option>
+                <option value="debt_consolidation">Debt Consolidation</option>
+                <option value="business_investment">Business Investment</option>
+                <option value="education">Education</option>
+                <option value="medical_expenses">Medical Expenses</option>
+                <option value="other">Other</option>
+            </select>
 
-        <label for="LoanAmount">Loan Amount:</label>
-        <input type="text" id="LoanAmount" name="LoanAmount" required>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 
-        <label for="Loan_Amount_Term">Loan Amount Term:</label>
-        <input type="text" id="Loan_Amount_Term" name="Loan_Amount_Term" required>
-
-        <label for="Credit_History">Credit History:</label>
-        <select id="Credit_History" name="Credit_History" required>
-            <option value="select">Select</option>
-            <option value="1">1</option>
-            <option value="0">0</option>
-        </select>
-
-        <label for="Property_Area">Property Area:</label>
-        <select id="Property_Area" name="Property_Area" required>
-            <option value="select">Select</option>
-            <option value="Urban">Urban</option>
-            <option value="Semiurban">Semiurban</option>
-            <option value="Rural">Rural</option>
-        </select>
-
-        <button type="submit">Predict Loan</button>
-    </form>
-
-
+    <script>
+        document.getElementById('loanForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form submission
+            // Get form data
+            const formData = new FormData(this);
+            // Convert form data to JSON
+            const jsonData = {};
+            formData.forEach((value, key) => {
+                jsonData[key] = value;
+            });
+            // Log the JSON data
+            console.log(jsonData);
+            // Here you can send the data to the backend for prediction using AJAX or fetch API
+            // Example: fetch('/predict', { method: 'POST', body: JSON.stringify(jsonData) })
+        });
+    </script>
 </body>
 </html>
