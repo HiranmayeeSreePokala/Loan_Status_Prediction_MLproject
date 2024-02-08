@@ -28,7 +28,7 @@ loan_dataset = pd.read_csv('Load Data.csv')
 
 ## Test Dataset
 
-Load the test data (name it as test_data). You can load the data using the below command.
+Load the test data "Loan_data.csv". You can load the data using the below command.
 
 ```bash
 loan_dataset = pd.read_csv('train_u6lujuX_CVtuZ9i (1).csv')
