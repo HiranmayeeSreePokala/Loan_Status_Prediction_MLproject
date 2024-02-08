@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Loan Prediction Result</title>
+    <style>
+        body {
+            background-color: #a3cfb4;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffffff;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Prediction Result:</h1>
+
+    {% if prediction == 1 %}
+    <h1>Loan Approved</h1>
+    {% else %}
+    <h1>Loan Not Approved</h1>
+    {% endif %}
+
+    <br><br>
+    <a href='/'>Go back to home page</a>
+
+</body>
+
+</html>
