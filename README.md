@@ -25,3 +25,12 @@ loan_dataset = pd.read_csv('Load Data.csv')
 - **Loan_Amount_Term:** The no. of days over which the loan will be paid
 - **Credit_History:** A record of a borrower's responsible repayment of debts (1 - has all debts paid, 0 - not paid)
 - **Property_Area:** The type of location where the applicant’s property lies (Rural, Semiurban, Urban)
+
+## Test Dataset
+
+Load the test data (name it as test_data). You can load the data using the below command.
+
+```bash
+# loading the dataset to pandas DataFrame
+loan_dataset = pd.read_csv('train_u6lujuX_CVtuZ9i (1).csv')
+```
