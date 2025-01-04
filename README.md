@@ -11,6 +11,16 @@ To load the training data in your colab, use the below command:
 ```bash
 loan_dataset = pd.read_csv('Load Data.csv')
 ```
+## Tech Stack
+
+<div align="left">
+  <img alt="Google colab" src="img/colab.png" height="70" width="70"/>
+  <img alt="Machine Learning" src="img/ml.png" height="70" width="70"/> 
+  <img alt="HTMl" src="img/html.png" height="70" width="70"/>
+  <img alt="CSS" src="img/css.png" height="70" width="70"/>
+  <img alt="Programming Language" src="img/python.png" height="70" width="70"/>
+  
+</div>
 
 ## Data Description
 - **Loan_ID:** A unique ID assigned to every loan applicant
