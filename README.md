@@ -18,8 +18,7 @@ loan_dataset = pd.read_csv('Load Data.csv')
   <img alt="Machine Learning" src="img/ml.png" height="70" width="70"/> 
   <img alt="HTMl" src="img/html.png" height="60" width="60"/>
   <img alt="CSS" src="img/css.png" height="60" width="60"/>
-  <img alt="Programming Language" src="img/python.png" height="70" width="70"/>
-  
+  <img alt="Programming Language" src="img/python.png" height="66" width="66"/>
 </div>
 
 ## Data Description
